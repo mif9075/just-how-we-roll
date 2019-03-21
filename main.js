@@ -56,6 +56,21 @@ function setStartingImages() {
 # = Roll Functions
 # ========================================================
 */
+function rollD6(){
+
+}
+function rollDoubleD6(){
+
+}
+function rollD12(){
+
+}
+function rollD20(){
+
+}
+function resetAllRolls(){
+    
+}
 
 /*
 # ========================================================
