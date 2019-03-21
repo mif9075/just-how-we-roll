@@ -4,7 +4,7 @@
 # ========================================================
 */
 
-const sixes = [];
+let sixes = [];
 const doubleSixes = [];
 const twelves = [];
 const twenties = [];
@@ -56,20 +56,42 @@ function setStartingImages() {
 # = Roll Functions
 # ========================================================
 */
-function rollD6(){
+function rollD6(event){
+
+// console.log(getRandomInt(6));
+sixes.push(Math.ceil(Math.random() * 6));
+
+console.log(sixes);
+
+
+//Mean
+
+let sumOfmean = 0;
+let totalMean = 0;
+
+for (let i = 0; i < sixes.length; i++){
+sumOfmean += sixes[i];
+}
+
+totalMean = sumOfmean / (sixes.length);
+console.log(totalMean);
 
 }
-function rollDoubleD6(){
-
-}
-function rollD12(){
-
-}
-function rollD20(){
-
-}
-function resetAllRolls(){
+function rollDoubleD6(event){
     
+
+}
+function rollD12(event){
+    
+
+}
+function rollD20(event){
+    
+
+}
+function resetAllRolls(event){
+    
+
 }
 
 /*
@@ -77,6 +99,8 @@ function resetAllRolls(){
 # = Math Functions
 # ========================================================
 */
+
+
 
 /*
 # ========================================================
