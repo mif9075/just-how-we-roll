@@ -72,14 +72,23 @@ sumOfMean += sixes[i];
 }
 
 totalMean = sumOfMean / (sixes.length);
-console.log(totalMean);
+// console.log(totalMean);
 
 document.querySelector('#d6-rolls-mean').innerText = totalMean;
 
-//Sort
+//Sort and Median
 let sorted = [];
+let medianResult = 0;
+
 sorted = sixes.sort();
-console.log(sorted);
+
+let mid = Math.floor (sorted.length / 2);
+
+if (sorted.length % 2) {medianResult = sorted[mid];} else {
+    medianResult = sorted[mid - 1] + sorted[mid] / 2.0;
+}
+
+document.querySelector('#d6-rolls-median').innerText = medianResult;
 }
 
 
