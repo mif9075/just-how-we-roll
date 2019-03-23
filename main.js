@@ -62,6 +62,13 @@ let randomInt = Math.ceil(Math.random() * 6);
 sixes.push(randomInt);
 console.log(sixes);
 
+//Change Image
+const START_DIRECTORY = './images/d6/'
+const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/${randomInt}.png`;
+
+const d6Roll = document.querySelector('#d6-roll');
+d6Roll.src = SIX_SIDED_START_IMAGE;
+
 //Mean
 
 let sumOfMean = 0;
