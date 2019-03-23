@@ -78,7 +78,8 @@ for (let i = 0; i < sixes.length; i++){
 sumOfMean += sixes[i];
 }
 
-totalMean = sumOfMean / (sixes.length);
+// Mean Calculated to 1 decimal place
+totalMean = parseFloat(sumOfMean / (sixes.length)).toFixed(1);
 // console.log(totalMean);
 
 document.querySelector('#d6-rolls-mean').innerText = totalMean;
@@ -97,7 +98,8 @@ if (sorted.length % 2) {medianResult = sorted[mid];} else {
 
 // console.log(sorted);
 
-document.querySelector('#d6-rolls-median').innerText = medianResult;
+//Median to 1 decimal place as the mean;
+document.querySelector('#d6-rolls-median').innerText = medianResult.toFixed(1);
 }
 
 
