@@ -57,26 +57,32 @@ function setStartingImages() {
 # ========================================================
 */
 function rollD6(event){
-
-// console.log(getRandomInt(6));
-sixes.push(Math.ceil(Math.random() * 6));
-
+///Random Integers
+let randomInt = Math.ceil(Math.random() * 6);
+sixes.push(randomInt);
 console.log(sixes);
-
 
 //Mean
 
-let sumOfmean = 0;
+let sumOfMean = 0;
 let totalMean = 0;
 
 for (let i = 0; i < sixes.length; i++){
-sumOfmean += sixes[i];
+sumOfMean += sixes[i];
 }
 
-totalMean = sumOfmean / (sixes.length);
+totalMean = sumOfMean / (sixes.length);
 console.log(totalMean);
 
+document.querySelector('#d6-rolls-mean').innerText = totalMean;
+
+//Sort
+let sorted = [];
+sorted = sixes.sort();
+console.log(sorted);
 }
+
+
 function rollDoubleD6(event){
     
 
@@ -99,7 +105,6 @@ function resetAllRolls(event){
 # = Math Functions
 # ========================================================
 */
-
 
 
 /*
