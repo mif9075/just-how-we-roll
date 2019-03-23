@@ -5,9 +5,9 @@
 */
 
 let sixes = [];
-const doubleSixes = [];
-const twelves = [];
-const twenties = [];
+let doubleSixes = [];
+let twelves = [];
+let twenties = [];
 
 window.onload = init;
 
@@ -96,7 +96,7 @@ if (sorted.length % 2) {medianResult = sorted[mid];} else {
     medianResult = (sorted[mid - 1] + sorted[mid]) / 2.0;
 }
 
-// console.log(sorted);
+console.log(sorted);
 
 //Median to 1 decimal place as the mean;
 document.querySelector('#d6-rolls-median').innerText = medianResult.toFixed(1);
@@ -104,7 +104,25 @@ document.querySelector('#d6-rolls-median').innerText = medianResult.toFixed(1);
 
 
 function rollDoubleD6(event){
-    
+///Random Integers
+let randomInt = Math.ceil(Math.random() * 6);
+let randomInt2= Math.ceil(Math.random() * 6);
+doubleSixes.push(randomInt); 
+doubleSixes.push(randomInt2);
+
+console.log(doubleSixes);
+
+//Change Image
+const START_DIRECTORY = './images/d6/'
+const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/${randomInt}.png`;
+const SIX_SIDED_START_IMAGE2 = `${START_DIRECTORY}/${randomInt2}.png`;
+
+
+const d6Roll = document.querySelector('#double-d6-roll-1');
+const d6Roll2 = document.querySelector('#double-d6-roll-2');
+d6Roll.src = SIX_SIDED_START_IMAGE;
+d6Roll2.src = SIX_SIDED_START_IMAGE2;
+
 
 }
 function rollD12(event){
