@@ -60,7 +60,7 @@ function rollD6(event){
 ///Random Integers
 let randomInt = Math.ceil(Math.random() * 6);
 sixes.push(randomInt);
-console.log(sixes);
+// console.log(sixes);
 
 //Change Image
 const START_DIRECTORY = './images/d6/'
@@ -89,11 +89,13 @@ let medianResult = 0;
 
 sorted = sixes.sort();
 
-let mid = Math.floor (sorted.length / 2);
+let mid = Math.floor (sorted.length/2);
 
 if (sorted.length % 2) {medianResult = sorted[mid];} else {
-    medianResult = sorted[mid - 1] + sorted[mid] / 2.0;
+    medianResult = (sorted[mid - 1] + sorted[mid]) / 2.0;
 }
+
+// console.log(sorted);
 
 document.querySelector('#d6-rolls-median').innerText = medianResult;
 }
