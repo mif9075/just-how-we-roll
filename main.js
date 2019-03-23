@@ -58,13 +58,13 @@ function setStartingImages() {
 */
 function rollD6(event){
 ///Random Integers
-let randomInt = Math.ceil(Math.random() * 6);
-sixes.push(randomInt);
+let randomIntIn = Math.ceil(Math.random() * 6);
+sixes.push(randomIntIn);
 // console.log(sixes);
 
 //Change Image
 const START_DIRECTORY = './images/d6/'
-const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/${randomInt}.png`;
+const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/${randomIntIn}.png`;
 
 const d6Roll = document.querySelector('#d6-roll');
 d6Roll.src = SIX_SIDED_START_IMAGE;
@@ -96,7 +96,7 @@ if (sorted.length % 2) {medianResult = sorted[mid];} else {
     medianResult = (sorted[mid - 1] + sorted[mid]) / 2.0;
 }
 
-console.log(sorted);
+// console.log(sorted);
 
 //Median to 1 decimal place as the mean;
 document.querySelector('#d6-rolls-median').innerText = medianResult.toFixed(1);
@@ -122,9 +122,9 @@ const d6Roll = document.querySelector('#double-d6-roll-1');
 const d6Roll2 = document.querySelector('#double-d6-roll-2');
 d6Roll.src = SIX_SIDED_START_IMAGE;
 d6Roll2.src = SIX_SIDED_START_IMAGE2;
-
-
 }
+
+
 function rollD12(event){
     
 
@@ -143,7 +143,32 @@ function resetAllRolls(event){
 # = Math Functions
 # ========================================================
 */
+function getMean (arrayDice) {
+    let sumOfMean = 0;
+    let totalMean = 0;
+    
+    for (let i = 0; i < arrayDice.length; i++){
+    sumOfMean += arrayDice[i];
+    }
+    
+    // Mean Calculated to 1 decimal place
+    totalMean = parseFloat(sumOfMean / (arrayDice.length)).toFixed(1);
 
+}
+
+// function getMedian {
+//     let sorted = [];
+//     let medianResult = 0;
+
+// sorted = sixes.sort();
+
+// let mid = Math.floor (sorted.length/2);
+
+// if (sorted.length % 2) {medianResult = sorted[mid];} else {
+//     medianResult = (sorted[mid - 1] + sorted[mid]) / 2.0;
+// }
+
+// }
 
 /*
 # ========================================================
