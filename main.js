@@ -57,10 +57,12 @@ function setStartingImages() {
 # ========================================================
 */
 function rollD6(event){
+
 ///Random Integers
 let randomIntIn = Math.ceil(Math.random() * 6);
 sixes.push(randomIntIn);
-// console.log(sixes);
+
+console.log(sixes);
 
 //Change Image
 const START_DIRECTORY = './images/d6/'
@@ -126,14 +128,35 @@ d6Roll2.src = SIX_SIDED_START_IMAGE2;
 
 
 function rollD12(event){
+///Random Integers
+let randomInt = Math.ceil(Math.random() * 12);
+twelves.push(randomInt); 
+
+console.log(twelves);
+
+//Change Image   
+const START_DIRECTORY = './images/numbers/'
+const d12Roll = document.querySelector('#d12-roll');
+    d12Roll.src = `${START_DIRECTORY}/d12.jpeg`;
+    
     
 
 }
 function rollD20(event){
-    
+///Random Integers
+let randomInt = Math.ceil(Math.random() * 20);
+twenties.push(randomInt); 
+
+console.log(twenties);
+
+//Change Image  
+const START_DIRECTORY = './images/numbers/'
+const d20Roll = document.querySelector('#d20-roll');
+    d20Roll.src = `${START_DIRECTORY}/d20.jpg`;
 
 }
 function resetAllRolls(event){
+
     
 
 }
@@ -156,19 +179,24 @@ function getMean (arrayDice) {
 
 }
 
-// function getMedian {
-//     let sorted = [];
-//     let medianResult = 0;
+function getMedian(arrayDice) {
+    let sorted = [];
+    let medianResult = 0;
 
-// sorted = sixes.sort();
+sorted = sixes.sort();
 
-// let mid = Math.floor (sorted.length/2);
+let mid = Math.floor (sorted.length/2);
 
-// if (sorted.length % 2) {medianResult = sorted[mid];} else {
-//     medianResult = (sorted[mid - 1] + sorted[mid]) / 2.0;
-// }
+if (sorted.length % 2) {medianResult = sorted[mid];} else {
+    medianResult = (sorted[mid - 1] + sorted[mid]) / 2.0;
+}
 
-// }
+}
+
+
+function getMode(arrayDice){
+
+}
 
 /*
 # ========================================================
