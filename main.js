@@ -29,6 +29,9 @@ function init() {
     const resetButton = document.querySelector('#reset-button')
     resetButton.addEventListener('click', resetAllRolls);
 
+    const multipleRolls = document.querySelector('#multiple-button')
+    multipleRolls.addEventListener('click', multipleRoll);
+
     setStartingImages();
 }
 
@@ -223,9 +226,9 @@ if (sorted.length % 2) {return medianResult = sorted[mid];} else {
 }
 
 
-function getMode(arrayDice){
+// function getMode(arrayDice){
 
-}
+// }
 
 /*
 # ========================================================
@@ -233,3 +236,9 @@ function getMode(arrayDice){
 # ========================================================
 */
 
+function multipleRoll() {
+    rollD6();
+    rollDoubleD6();
+    rollD12();
+    rollD20();
+}
