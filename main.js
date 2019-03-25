@@ -62,8 +62,6 @@ function rollD6(event){
 let randomIntIn = Math.ceil(Math.random() * 6);
 sixes.push(randomIntIn);
 
-console.log(sixes);
-
 //Change Image
 const START_DIRECTORY = './images/d6/'
 const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/${randomIntIn}.png`;
@@ -82,7 +80,6 @@ sumOfMean += sixes[i];
 
 // Mean Calculated to 1 decimal place
 totalMean = parseFloat(sumOfMean / (sixes.length)).toFixed(1);
-// console.log(totalMean);
 
 document.querySelector('#d6-rolls-mean').innerText = totalMean;
 
@@ -98,8 +95,6 @@ if (sorted.length % 2) {medianResult = sorted[mid];} else {
     medianResult = (sorted[mid - 1] + sorted[mid]) / 2.0;
 }
 
-// console.log(sorted);
-
 //Median to 1 decimal place as the mean;
 document.querySelector('#d6-rolls-median').innerText = medianResult.toFixed(1);
 }
@@ -111,8 +106,6 @@ let randomInt = Math.ceil(Math.random() * 6);
 let randomInt2= Math.ceil(Math.random() * 6);
 doubleSixes.push(randomInt); 
 doubleSixes.push(randomInt2);
-
-console.log(doubleSixes);
 
 //Change Image
 const START_DIRECTORY = './images/d6/'
@@ -140,8 +133,6 @@ function rollD12(event){
 let randomInt = Math.ceil(Math.random() * 12);
 twelves.push(randomInt); 
 
-console.log(twelves);
-
 //Change Image   
 const START_DIRECTORY = './images/numbers/'
 const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/${randomInt}.png`;
@@ -163,8 +154,6 @@ function rollD20(event){
 ///Random Integers
 let randomInt = Math.ceil(Math.random() * 20);
 twenties.push(randomInt); 
-
-console.log(twenties);
 
 //Change Image   
 const START_DIRECTORY = './images/numbers/'
