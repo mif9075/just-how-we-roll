@@ -11,6 +11,7 @@ let twenties = [];
 
 window.onload = init;
 
+
 function init() {
     const d6Roll = document.querySelector('#d6-roll');
     d6Roll.addEventListener('click', rollD6);
@@ -34,6 +35,7 @@ function init() {
 
     setStartingImages();
 }
+
 
 function setStartingImages() {
     const START_DIRECTORY = './images/start'
@@ -59,6 +61,8 @@ function setStartingImages() {
 # = Roll Functions
 # ========================================================
 */
+
+//    Long Version           //
 function rollD6(event){
 
 ///Random Integers
@@ -101,17 +105,15 @@ if (sorted.length % 2) {medianResult = sorted[mid];} else {
 //Median to 1 decimal place as the mean;
 document.querySelector('#d6-rolls-median').innerText = medianResult.toFixed(1);
 }
+// Long Version          //
+
 
 
 function rollDoubleD6(event){
-///Random Integers
-// let randomInt = Math.ceil(Math.random() * 6);
-// let randomInt2= Math.ceil(Math.random() * 6);
-// doubleSixes.push(randomInt); 
-// doubleSixes.push(randomInt2);
 
-randomInt = getRandomInt(doubleSixes, 6);
-randomInt2 = getRandomInt(doubleSixes, 6);
+randomInt = getRandomInt(6);
+randomInt2 = getRandomInt(6);
+doubleSixes.push(randomInt + randomInt2);
 
 //Change Image
 const START_DIRECTORY = './images/d6/'
@@ -134,18 +136,15 @@ document.querySelector('#double-d6-rolls-median').innerText = medianResult.toFix
 }
 
 function rollD12(event){
-///Random Integers
-// let randomInt = Math.ceil(Math.random() * 12);
-// twelves.push(randomInt); 
 
-randomInt = getRandomInt(twelves, 12);
+randomInt = getRandomInt(12);
+twelves.push(randomInt);
 
 //Change Image   
 const START_DIRECTORY = './images/numbers/'
 const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/${randomInt}.png`;
 const d12Roll = document.querySelector('#d12-roll');
 d12Roll.src = SIX_SIDED_START_IMAGE;
-
 
 //Mean
 getMean(twelves);
@@ -158,10 +157,9 @@ document.querySelector('#d12-rolls-median').innerText = medianResult.toFixed(1);
 
 
 function rollD20(event){
-///Random Integers
-// let randomInt = Math.ceil(Math.random() * 20);
-// twenties.push(randomInt); 
-randomInt = getRandomInt(twenties, 20);
+
+randomInt = getRandomInt(20);
+twenties.push(randomInt);
 
 //Change Image   
 const START_DIRECTORY = './images/numbers/'
@@ -176,8 +174,9 @@ document.querySelector('#d20-rolls-mean').innerText = totalMean;
 getMedian(twenties);
 document.querySelector('#d20-rolls-median').innerText = medianResult.toFixed(1);
 //Mode
-
 }
+
+
 function resetAllRolls(event){
     setStartingImages();
     sixes = [];
@@ -196,7 +195,6 @@ function resetAllRolls(event){
 
     document.querySelector('#d20-rolls-mean').innerText = '';
     document.querySelector('#d20-rolls-median').innerText = '';
-
 }
 
 /*
@@ -204,9 +202,10 @@ function resetAllRolls(event){
 # = Math Functions
 # ========================================================
 */
+
+
 function getMean(arrayDice) {
     let sumOfMean = 0;
-    
     
     for (let i = 0; i < arrayDice.length; i++){
     sumOfMean += arrayDice[i];
@@ -216,6 +215,7 @@ function getMean(arrayDice) {
     return totalMean = parseFloat(sumOfMean / (arrayDice.length)).toFixed(1);
     
 }
+
 
 function getMedian(arrayDice) {
     let sorted = [];
@@ -248,8 +248,8 @@ function multipleRoll() {
     rollD20();
 }
 
-function getRandomInt(arrayDice, factor) {
-let randomInt2 = Math.ceil(Math.random() * factor);
-arrayDice.push(randomInt2);
-return randomInt2;
+function getRandomInt(factor) {
+let randomInt = Math.ceil(Math.random() * factor);
+return randomInt;
 }
+
