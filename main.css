@@ -1,6 +1,6 @@
 .roll {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
 }
 
 #double-d6-buttons {
@@ -10,6 +10,13 @@
 
 #d6, #d12, #d20, #double-d6 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
     border: solid;
+    
+    
+}
+#app {
+    display: flex;
+    
+    
 }
