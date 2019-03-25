@@ -105,10 +105,13 @@ document.querySelector('#d6-rolls-median').innerText = medianResult.toFixed(1);
 
 function rollDoubleD6(event){
 ///Random Integers
-let randomInt = Math.ceil(Math.random() * 6);
-let randomInt2= Math.ceil(Math.random() * 6);
-doubleSixes.push(randomInt); 
-doubleSixes.push(randomInt2);
+// let randomInt = Math.ceil(Math.random() * 6);
+// let randomInt2= Math.ceil(Math.random() * 6);
+// doubleSixes.push(randomInt); 
+// doubleSixes.push(randomInt2);
+
+randomInt = getRandomInt(doubleSixes, 6);
+randomInt2 = getRandomInt(doubleSixes, 6);
 
 //Change Image
 const START_DIRECTORY = './images/d6/'
@@ -130,11 +133,12 @@ document.querySelector('#double-d6-rolls-median').innerText = medianResult.toFix
 //Mode
 }
 
-
 function rollD12(event){
 ///Random Integers
-let randomInt = Math.ceil(Math.random() * 12);
-twelves.push(randomInt); 
+// let randomInt = Math.ceil(Math.random() * 12);
+// twelves.push(randomInt); 
+
+randomInt = getRandomInt(twelves, 12);
 
 //Change Image   
 const START_DIRECTORY = './images/numbers/'
@@ -155,8 +159,9 @@ document.querySelector('#d12-rolls-median').innerText = medianResult.toFixed(1);
 
 function rollD20(event){
 ///Random Integers
-let randomInt = Math.ceil(Math.random() * 20);
-twenties.push(randomInt); 
+// let randomInt = Math.ceil(Math.random() * 20);
+// twenties.push(randomInt); 
+randomInt = getRandomInt(twenties, 20);
 
 //Change Image   
 const START_DIRECTORY = './images/numbers/'
@@ -241,4 +246,10 @@ function multipleRoll() {
     rollDoubleD6();
     rollD12();
     rollD20();
+}
+
+function getRandomInt(arrayDice, factor) {
+let randomInt2 = Math.ceil(Math.random() * factor);
+arrayDice.push(randomInt2);
+return randomInt2;
 }
