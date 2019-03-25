@@ -136,12 +136,13 @@ console.log(twelves);
 
 //Change Image   
 const START_DIRECTORY = './images/numbers/'
+const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/${randomInt}.png`;
 const d12Roll = document.querySelector('#d12-roll');
-    d12Roll.src = `${START_DIRECTORY}/d12.jpeg`;
-    
-    
-
+d12Roll.src = SIX_SIDED_START_IMAGE;
 }
+
+
+
 function rollD20(event){
 ///Random Integers
 let randomInt = Math.ceil(Math.random() * 20);
@@ -149,10 +150,11 @@ twenties.push(randomInt);
 
 console.log(twenties);
 
-//Change Image  
+//Change Image   
 const START_DIRECTORY = './images/numbers/'
+const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/${randomInt}.png`;
 const d20Roll = document.querySelector('#d20-roll');
-    d20Roll.src = `${START_DIRECTORY}/d20.jpg`;
+d20Roll.src = SIX_SIDED_START_IMAGE;
 
 }
 function resetAllRolls(event){
