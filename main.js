@@ -188,6 +188,17 @@ function resetAllRolls(event){
     twelves = [];
     twenties = [];
     
+    document.querySelector('#d6-rolls-mean').innerText = '';
+    document.querySelector('#d6-rolls-median').innerText = '';
+
+    document.querySelector('#double-d6-rolls-mean').innerText = '';
+    document.querySelector('#double-d6-rolls-median').innerText = '';
+
+    document.querySelector('#d12-rolls-mean').innerText = '';
+    document.querySelector('#d12-rolls-median').innerText = '';
+
+    document.querySelector('#d20-rolls-mean').innerText = '';
+    document.querySelector('#d20-rolls-median').innerText = '';
 
 }
 
