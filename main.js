@@ -180,10 +180,13 @@ getMedian(twenties);
 document.querySelector('#d20-rolls-median').innerText = medianResult.toFixed(1);
 //Mode
 
-
 }
 function resetAllRolls(event){
-
+    setStartingImages();
+    sixes = [];
+    doubleSixes = [];
+    twelves = [];
+    twenties = [];
     
 
 }
